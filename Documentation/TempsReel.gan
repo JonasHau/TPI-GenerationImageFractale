@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="TPI - Generation d'image fractale" company="" webLink="https://github.com/JonasHau/TPI-GenerationImageFractale" view-date="2021-05-02" view-index="0" gantt-divider-location="608" resource-divider-location="300" version="2.8.1" locale="fr">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="443" order="0"/>
+        <field id="tpd4" name="Date de début" width="91" order="1"/>
+        <field id="tpd5" name="Date de fin" width="71" order="2"/>
+        <option id="color.recent"><![CDATA[#cccccc]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="87" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="1" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="2021" month="5" date="13" type="HOLIDAY" color="#cccccc"/>
+        <date year="2021" month="5" date="14" type="HOLIDAY" color="#cccccc"/>
+        <date year="2021" month="5" date="24" type="HOLIDAY" color="#cccccc"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="TPI" meeting="false" start="2021-05-03" duration="16" complete="0" expand="true">
+            <task id="5" name="Analyse" meeting="false" start="2021-05-03" duration="5" complete="0" expand="true">
+                <task id="17" name="Création de la planification initiale" meeting="false" start="2021-05-03" duration="1" complete="0" expand="true"/>
+                <task id="18" name="Saisie des données du CdC dans la documentation" meeting="false" start="2021-05-03" duration="1" complete="0" expand="true"/>
+                <task id="19" name="Définitions des objectifs" meeting="false" start="2021-05-03" duration="2" complete="0" expand="true"/>
+                <task id="21" name="Modélisation de la BdD (MCD)" meeting="false" start="2021-05-04" duration="1" complete="0" expand="true"/>
+                <task id="20" name="Maquettage de l'interface" meeting="false" start="2021-05-04" duration="1" complete="0" expand="true"/>
+                <task id="22" name="Définition de la stratégie de test" meeting="false" start="2021-05-04" duration="1" complete="0" expand="true"/>
+                <task id="23" name="Rédaction des tests" meeting="false" start="2021-05-06" duration="1" complete="0" expand="true"/>
+                <task id="24" name="Evalutation des risques techniques" meeting="false" start="2021-05-06" duration="2" complete="0" expand="true"/>
+                <task id="25" name="Rédaction du dossier de conception" meeting="false" start="2021-05-07" duration="2" complete="0" expand="true">
+                    <task id="26" name="Création du diagramme de classes" meeting="false" start="2021-05-07" duration="2" complete="0" expand="true"/>
+                    <task id="28" name="Création du diagramme de séquence" meeting="false" start="2021-05-10" duration="1" complete="0" expand="true"/>
+                    <task id="41" name="Modélisation de la BdD (MLD)" meeting="false" start="2021-05-10" duration="1" complete="0" expand="true"/>
+                </task>
+                <task id="27" name="Finalisation de la planification" meeting="false" start="2021-05-10" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="6" name="Implementation" meeting="false" start="2021-05-10" duration="8" complete="0" expand="true">
+                <task id="30" name="Développement de l'interface" meeting="false" start="2021-05-10" duration="2" complete="0" expand="true"/>
+                <task id="31" name="Affichage de l'ensemble de Mandelbrot" meeting="false" start="2021-05-11" duration="2" complete="0" expand="true"/>
+                <task id="32" name="Sauvegarde de l'image générée (exportation au format png)" meeting="false" start="2021-05-17" duration="1" complete="0" expand="true"/>
+                <task id="40" name="CRUD de la BdD" meeting="false" start="2021-05-17" duration="1" complete="0" expand="true"/>
+                <task id="34" name="Historique des fractales générées" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
+                <task id="37" name="Rendre l'affichage dynamique (change selon la fractale choisie)" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
+                <task id="33" name="Affichage de l'ensemble de Julia" meeting="false" start="2021-05-20" duration="3" complete="0" expand="true"/>
+                <task id="36" name="Paramètrage de la fractale (bornes et constante complexe)" meeting="false" start="2021-05-25" duration="1" complete="0" expand="true"/>
+                <task id="42" name="Génération de la documentation Doxygen" meeting="false" start="2021-05-25" duration="1" complete="0" expand="true"/>
+                <task id="43" name="Génération de l'installeur" meeting="false" start="2021-05-25" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="7" name="Tests" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true">
+                <task id="14" name="Exécution des tests et retours dans la documentation" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true"/>
+                <task id="29" name="Documentation des erreures restantes" meeting="false" start="2021-05-28" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="8" name="Conclusion" meeting="false" start="2021-05-31" duration="3" complete="0" expand="true">
+                <task id="39" name="Comparaison entre la planification et le travail réalisé" meeting="false" start="2021-05-31" duration="1" complete="0" expand="true"/>
+                <task id="38" name="Rédaction de la conclusion" meeting="false" start="2021-06-01" duration="2" complete="0" expand="true"/>
+            </task>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
