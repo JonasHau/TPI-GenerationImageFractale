@@ -26,8 +26,7 @@ namespace GenerationImageFractale
         /// <returns>Never used, an empty bitmap</returns>
         public virtual Bitmap Render()
         {
-            //empty bitmap
-            return new Bitmap(500, 500);
+            return null;
         }
 
         /// <summary>
