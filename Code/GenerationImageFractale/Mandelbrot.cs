@@ -11,14 +11,7 @@ namespace GenerationImageFractale
 {
     public class Mandelbrot : Fractal
     {
-
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="xMin"></param>
-        /// <param name="xMax"></param>
-        /// <param name="yMin"></param>
-        /// <param name="yMax"></param>
+        //constructor
         public Mandelbrot(double xMin, double xMax, double yMin, double yMax)
         {
             this.XMin = xMin;
@@ -28,67 +21,50 @@ namespace GenerationImageFractale
         }
 
         /// <summary>
-        /// renders the fractal
+        /// Render the fractal
         /// </summary>
-        /// <returns>a bitmap picture</returns>
+        /// <returns>a bitmap of the fractal</returns>
         public override Bitmap Render()
         {
+            //canvas related variables
             int canvasWidth = 500;
             int canvasHeight = 500;
-            double yLength = Math.Abs(YMin - YMax);
-
-            int iterationLimit = 15;
-
-            Complex z = new Complex(0, 0); //useless ??
-            Complex c = new Complex(0, 0);
-            double xCoordinate, yCoordinate;
-            List<double> complexCoordinate;
-
             Bitmap canvas = new Bitmap(canvasWidth, canvasHeight);
 
-            /* multithreading generates error because multiple threads tries to access canvas
-            //horizontal loop
-            Parallel.For(0, canvasWidth, i =>
-            {
-                //vertical loop
-                Parallel.For(0, canvasHeight, j =>
-                {
-            */
+            //fractal related variables
+            Complex z, c;
+            z = new Complex(0, 0);
+            List<double> complexCoordinate;
+            int iterationLimit = 50;
 
             //horizontal loop
-            for(int i = 0; i < canvasWidth; i++) {
+            for (int i = 0; i < canvasWidth; i++) {
+
                 //vertical loop
                 for(int j = 0; j < canvasHeight; j++) {
                     
-                    //converts the values of the loop to the coordinates based on the configuration
-                    complexCoordinate = ConvertBitmapPixeltoCoordinate(i, j, canvasWidth, canvasHeight);
-                    xCoordinate = complexCoordinate[0];
-                    yCoordinate = complexCoordinate[1];
+                    //convert the values of the loop to coordinates on the canvas
+                    complexCoordinate = ConvertLoopValuestoCoordinate(i, j, canvasWidth, canvasHeight);
+                    c = new Complex(complexCoordinate[0], complexCoordinate[1]);
 
-                    c = new Complex(xCoordinate, yCoordinate);
-
-                    //colors the pixels that are in the mandelbrot set
+                    //color the pixels that are in the mandelbrot set
                     if (IsPixelInTheMandelbrotSet(z, c, iterationLimit))
                     {
-                        canvas.SetPixel(i, Math.Abs(j - (canvasHeight-1)), Color.Black);    //BUGFIXES TODO -> OutOfRangeException
+                        canvas.SetPixel(i, Math.Abs(j - (canvasHeight-1)), Color.Black);
                     }
                 }
             }
-
-            /*
-                });
-            });*/
 
             return canvas;
         }
 
         /// <summary>
-        /// check if the specified point is in the mandelbrot set
+        /// Check if the specified point is in the mandelbrot set
         /// </summary>
         /// <param name="z"></param>
         /// <param name="c"></param>
-        /// <param name="limit"></param>
-        /// <param name="iter"></param>
+        /// <param name="limit">the maximum number of iterations</param>
+        /// <param name="iter">the current number of iteration</param>
         /// <returns></returns>
         bool IsPixelInTheMandelbrotSet(Complex z, Complex c, int limit, int iter = 0)
         {

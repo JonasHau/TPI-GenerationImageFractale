@@ -10,10 +10,9 @@ namespace GenerationImageFractale
 {
     public abstract class Fractal
     {
-        private double xMin;
-        private double xMax;
-        private double yMin;
-        private double yMax;
+        //attributes
+        private double xMin, xMax;
+        private double yMin, yMax;
 
         //accessors
         public double XMin { get; set; }
@@ -22,31 +21,32 @@ namespace GenerationImageFractale
         public double YMax { get; set; }
 
         /// <summary>
-        /// is redefined for each fractals
+        /// Is redefined for each fractal
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Never used, an empty bitmap</returns>
         public virtual Bitmap Render()
         {
-            //empty 16x16 bitmap
-            return new Bitmap(500, 500); //empty bitmap
+            //empty bitmap
+            return new Bitmap(500, 500);
         }
 
         /// <summary>
-        /// converts a coordinate in the bitmap to a coordinate in the complex plane
+        /// Converts a coordinate in the bitmap to a coordinate in the complex plane (based on the user configuration
         /// </summary>
-        /// <param name="bitmapX"></param>
-        /// <param name="bitmapY"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <returns></returns>
-        public List<double> ConvertBitmapPixeltoCoordinate(int bitmapX, int bitmapY, int width, int height)
+        /// <param name="bitmapX">x value in the bitmap</param>
+        /// <param name="bitmapY">y value in the bitmap</param>
+        /// <param name="width">width of the bitmap</param>
+        /// <param name="height">height of the bitmap</param>
+        /// <returns>The two converted coordinates in a list</returns>
+        public List<double> ConvertLoopValuestoCoordinate(int bitmapX, int bitmapY, int width, int height)
         {
-            List<double> complexCoordinate = new List<double>();
-
-            //taken from https://stackoverflow.com/a/51494556
-            //x in [a,b] => z = (d-c) * (x-a) / (b-a) + c in [c,d]
-            complexCoordinate.Add((XMax - XMin) * (bitmapX - 0) / (width - 0) + XMin); //x coordinate
-            complexCoordinate.Add((YMax - YMin) * (bitmapY - 0) / (height - 0) + YMin);
+            List<double> complexCoordinate = new List<double>
+            {
+                //inspired from https://stackoverflow.com/a/51494556
+                //x in [a,b] to y in [c,d] => y = (d-c) * (x-a) / (b-a) + c
+                (XMax - XMin) * (bitmapX - 0) / (width - 0) + XMin,
+                (YMax - YMin) * (bitmapY - 0) / (height - 0) + YMin
+            };
 
             return complexCoordinate;
         }

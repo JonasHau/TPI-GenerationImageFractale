@@ -46,6 +46,7 @@
             this.txtYMax = new System.Windows.Forms.TextBox();
             this.txtCReal = new System.Windows.Forms.TextBox();
             this.txtCImaginary = new System.Windows.Forms.TextBox();
+            this.txtGenerationTime = new System.Windows.Forms.Label();
             this.toolStr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
@@ -194,12 +195,25 @@
             this.txtCImaginary.Size = new System.Drawing.Size(75, 20);
             this.txtCImaginary.TabIndex = 7;
             // 
+            // txtGenerationTime
+            // 
+            this.txtGenerationTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGenerationTime.BackColor = System.Drawing.Color.Transparent;
+            this.txtGenerationTime.Location = new System.Drawing.Point(419, 7);
+            this.txtGenerationTime.Name = "txtGenerationTime";
+            this.txtGenerationTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtGenerationTime.Size = new System.Drawing.Size(93, 18);
+            this.txtGenerationTime.TabIndex = 9;
+            this.txtGenerationTime.Text = "temps";
+            this.txtGenerationTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Main
             // 
             this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 606);
+            this.ClientSize = new System.Drawing.Size(524, 605);
+            this.Controls.Add(this.txtGenerationTime);
             this.Controls.Add(this.txtCImaginary);
             this.Controls.Add(this.txtCReal);
             this.Controls.Add(this.txtYMax);
@@ -250,6 +264,7 @@
         private System.Windows.Forms.TextBox txtYMax;
         private System.Windows.Forms.TextBox txtCReal;
         private System.Windows.Forms.TextBox txtCImaginary;
+        private System.Windows.Forms.Label txtGenerationTime;
     }
 }
 
