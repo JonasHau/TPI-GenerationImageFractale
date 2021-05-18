@@ -45,7 +45,6 @@ namespace GenerationImageFractale
         public static void CloseDatabase()
         {
             System.Data.SQLite.SQLiteConnection conn = new System.Data.SQLite.SQLiteConnection("data source=GenerationImageFractale.db3");
-            //System.Data.SQLite.SQLiteCommand cmd = new System.Data.SQLite.SQLiteCommand(conn); //check if i can remove this
             conn.Close();
         }
 
@@ -66,15 +65,15 @@ namespace GenerationImageFractale
 
             string createTableQuery = @"
                 BEGIN TRANSACTION;
-                CREATE TABLE 'Fractale' (
+                CREATE TABLE 'Fractals' (
 	                'id'	INTEGER NOT NULL UNIQUE,
-	                'indexFractale'	INTEGER NOT NULL,
+	                'indexFractal'	INTEGER NOT NULL,
 	                'xMin'	REAL NOT NULL,
 	                'xMax'	REAL NOT NULL,
 	                'yMin'	REAL NOT NULL,
 	                'yMax'	REAL NOT NULL,
-	                'cReel'	REAL,
-	                'cImaginaire'	REAL,
+	                'cReal'	REAL,
+	                'cImaginary'	REAL,
 	                PRIMARY KEY('id' AUTOINCREMENT)
                 );
                 COMMIT;";

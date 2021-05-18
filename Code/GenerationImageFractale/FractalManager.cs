@@ -67,8 +67,14 @@ namespace GenerationImageFractale
             //render the selected fractal
             if (SelectedFractal == 0)
             {
+                //create and tries to render the fractal
                 Fractal fractal = new Mandelbrot(xMin, xMax, yMin, yMax);
-                return fractal.Render();
+                Bitmap bitmap = fractal.Render();
+
+                //adds the fractal to the history
+                QueryBuilder.SaveFractal(selectedFractal, xMin, xMax, yMin, yMax);
+
+                return bitmap;
             }
             /*
             else if (SelectedFractal == 1)
@@ -82,11 +88,6 @@ namespace GenerationImageFractale
             {
                 throw new InvalidFractalException();
             }
-        }
-
-        public void SaveFractal()
-        {
-
         }
     }
 }

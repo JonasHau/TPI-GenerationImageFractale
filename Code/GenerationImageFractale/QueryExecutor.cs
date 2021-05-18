@@ -13,11 +13,12 @@ namespace GenerationImageFractale
         /// </summary>
         /// <param name="query">select query</param>
         /// <returns>query result</returns>
-        internal static List<string> Select(string query)
+        internal static List<List<string>> Select(string query)
         {
             SQLiteCommand command = DatabaseConnector.OpenDatabase();
-            List<string> result = new List<string>();
-            DataTable dt = new DataTable();
+            List<List<string>> result = new List<List<string>>();
+            List<string> fractal = new List<string>();
+            //DataTable dt = new DataTable();
             command.CommandText = query;
             command.CommandType = CommandType.Text;
             SQLiteDataReader reader = command.ExecuteReader();
@@ -26,11 +27,22 @@ namespace GenerationImageFractale
             {
                 try
                 {
-                    result.Add(reader.GetString(0));
+                    //create the fractal
+                    fractal.Clear();
+                    fractal.Add(reader.GetInt32(0).ToString());
+                    fractal.Add(reader.GetDouble(1).ToString());
+                    fractal.Add(reader.GetDouble(2).ToString());
+                    fractal.Add(reader.GetDouble(3).ToString());
+                    fractal.Add(reader.GetDouble(4).ToString());
+                    fractal.Add(reader.GetDouble(5).ToString());
+                    fractal.Add(reader.GetDouble(6).ToString());
+
+                    //add it to result
+                    result.Add(new List<string>(fractal));
                 }
                 catch
                 {
-                    result.Add(reader.GetInt32(0).ToString());
+                    continue;
                 }
 
             }

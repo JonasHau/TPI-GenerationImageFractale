@@ -77,7 +77,7 @@
             this.picCanvas.Size = new System.Drawing.Size(500, 500);
             this.picCanvas.TabIndex = 1;
             this.picCanvas.TabStop = false;
-            this.picCanvas.Click += new System.EventHandler(this.SaveFractal);
+            this.picCanvas.Click += new System.EventHandler(this.ExportFractalToPng);
             // 
             // lblXMin
             // 
