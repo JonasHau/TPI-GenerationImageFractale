@@ -143,6 +143,7 @@
             this.cboFractal.Name = "cboFractal";
             this.cboFractal.Size = new System.Drawing.Size(125, 21);
             this.cboFractal.TabIndex = 8;
+            this.cboFractal.SelectedIndexChanged += new System.EventHandler(this.SelectedFractalChanged);
             // 
             // btnGenerate
             // 

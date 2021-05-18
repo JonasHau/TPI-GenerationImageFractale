@@ -168,5 +168,19 @@ namespace GenerationImageFractale
             //reloads history
             LoadHistory();
         }
+
+        /// <summary>
+        /// Runs everytime the selected fractal changes
+        /// </summary>
+        private void SelectedFractalChanged(object sender, EventArgs e)
+        {
+            bool IsFractalJulia = cboFractal.SelectedIndex == 1 ? true : false;
+
+            //changes the visibility of controls based on the fractal selected
+            lblCReal.Visible = IsFractalJulia;
+            txtCReal.Visible = IsFractalJulia;
+            lblCImaginary.Visible = IsFractalJulia;
+            txtCImaginary.Visible = IsFractalJulia;
+        }
     }
 }
