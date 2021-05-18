@@ -17,11 +17,11 @@ namespace GenerationImageFractale
     }
 
     /// <summary>
-    /// The parent of exception related to invalid boundaries
+    /// The parent of exception related to invalid parameters
     /// </summary>
-    public class InvalidBoundaryException : Exception
+    public class InvalidParameterException : Exception
     {
-        public InvalidBoundaryException(string message) : base(message)
+        public InvalidParameterException(string message) : base(message)
         {
         }
     }
@@ -29,7 +29,7 @@ namespace GenerationImageFractale
     /// <summary>
     /// Thrown when 'x min' is invalid
     /// </summary>
-    public class InvalidXMinException : InvalidBoundaryException
+    public class InvalidXMinException : InvalidParameterException
     {
         public InvalidXMinException() : base("La valeur 'x min' n'a pas été correctement configurée")
         {
@@ -39,7 +39,7 @@ namespace GenerationImageFractale
     /// <summary>
     /// Thrown when 'x max' is invalid
     /// </summary>
-    public class InvalidXMaxException : InvalidBoundaryException
+    public class InvalidXMaxException : InvalidParameterException
     {
         public InvalidXMaxException() : base("La valeur 'x max' n'a pas été correctement configurée")
         {
@@ -49,7 +49,7 @@ namespace GenerationImageFractale
     /// <summary>
     /// Thrown when 'y min' is invalid
     /// </summary>
-    public class InvalidYMinException : InvalidBoundaryException
+    public class InvalidYMinException : InvalidParameterException
     {
         public InvalidYMinException() : base("La valeur 'y min' n'a pas été correctement configurée")
         {
@@ -59,9 +59,29 @@ namespace GenerationImageFractale
     /// <summary>
     /// Thrown when 'y max' is invalid
     /// </summary>
-    public class InvalidYMaxException : InvalidBoundaryException
+    public class InvalidYMaxException : InvalidParameterException
     {
         public InvalidYMaxException() : base("La valeur 'y max' n'a pas été correctement configurée")
+        {
+        }
+    }
+
+    /// <summary>
+    /// Thrown when 'c real' is invalid
+    /// </summary>
+    public class InvalidCRealException : InvalidParameterException
+    {
+        public InvalidCRealException() : base("La valeur 'c réel' n'a pas été correctement configurée")
+        {
+        }
+    }
+
+    /// <summary>
+    /// Thrown when 'c imaginary' is invalid
+    /// </summary>
+    public class InvalidCImaginaryException : InvalidParameterException
+    {
+        public InvalidCImaginaryException() : base("La valeur 'c imaginaire' n'a pas été correctement configurée")
         {
         }
     }

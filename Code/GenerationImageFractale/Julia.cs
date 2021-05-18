@@ -9,15 +9,24 @@ using System.Threading.Tasks;
 
 namespace GenerationImageFractale
 {
-    public class Mandelbrot : Fractal
+    public class Julia : Fractal
     {
+        //attributes
+        private double cReal, cImaginary;
+
+        //accessors
+        public double CReal { get; set; }
+        public double CImaginary { get; set; }
+
         //constructor
-        public Mandelbrot(double xMin, double xMax, double yMin, double yMax)
+        public Julia(double xMin, double xMax, double yMin, double yMax, double cReal, double cImaginary)
         {
             this.XMin = xMin;
             this.XMax = xMax;
             this.YMin = yMin;
             this.YMax = yMax;
+            this.CReal = cReal;
+            this.CImaginary = cImaginary;
         }
 
         /// <summary>
@@ -32,7 +41,8 @@ namespace GenerationImageFractale
             Bitmap canvas = new Bitmap(canvasWidth, canvasHeight);
 
             //fractal related variables
-            Complex c;
+            Complex z, c;
+            c = new Complex(CReal, CImaginary);
             List<double> complexCoordinate;
             int iterationLimit = 150;
 
@@ -44,10 +54,10 @@ namespace GenerationImageFractale
                 {
                     //convert the values of the loop to coordinates on the canvas
                     complexCoordinate = ConvertLoopValuestoCoordinate(i, j, canvasWidth, canvasHeight);
-                    c = new Complex(complexCoordinate[0], complexCoordinate[1]);
+                    z = new Complex(complexCoordinate[0], complexCoordinate[1]);
 
-                    //color the pixels that are in the mandelbrot set
-                    if (IsPixelInTheSet(new Complex(0, 0), c, iterationLimit))
+                    //color the pixels that are in the julia set
+                    if (IsPixelInTheSet(z, c, iterationLimit))
                     {
                         canvas.SetPixel(i, Math.Abs(j - (canvasHeight - 1)), Color.Black);
                     }

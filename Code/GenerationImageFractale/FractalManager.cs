@@ -76,14 +76,27 @@ namespace GenerationImageFractale
 
                 return bitmap;
             }
-            /*
             else if (SelectedFractal == 1)
             {
-                //try to parse c parameters
+                double cReal, cImaginary;
 
-                fractal = new Julia(xMin, xMax, yMin, yMax, cReal, cImaginary);
-                return fractal.Render();
-            }*/
+                expression.setExpressionString(CReal);
+                if (!expression.checkSyntax()) { throw new InvalidCRealException(); }
+                cReal = expression.calculate();
+
+                expression.setExpressionString(CImaginary);
+                if (!expression.checkSyntax()) { throw new InvalidCImaginaryException(); }
+                cImaginary = expression.calculate();
+
+                //create and tries to render the fractal
+                Fractal fractal = new Julia(xMin, xMax, yMin, yMax, cReal, cImaginary);
+                Bitmap bitmap = fractal.Render();
+
+                //adds the fractal to the history
+                QueryBuilder.SaveFractal(selectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary);
+
+                return bitmap;
+            }
             else
             {
                 throw new InvalidFractalException();

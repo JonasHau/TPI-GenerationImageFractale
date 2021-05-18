@@ -73,6 +73,7 @@
     <Compile Include="Exception.cs" />
     <Compile Include="Fractal.cs" />
     <Compile Include="FractalManager.cs" />
+    <Compile Include="Julia.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

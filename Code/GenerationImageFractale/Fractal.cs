@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,6 +49,25 @@ namespace GenerationImageFractale
             };
 
             return complexCoordinate;
+        }
+
+        /// <summary>
+        /// Check if the specified point is in the mandelbrot set
+        /// </summary>
+        /// <param name="z"></param>
+        /// <param name="c"></param>
+        /// <param name="limit">the maximum number of iterations</param>
+        /// <param name="iter">the current number of iteration</param>
+        /// <returns></returns>
+        public bool IsPixelInTheSet(Complex z, Complex c, int limit, int iter = 0)
+        {
+            if (z.Magnitude > 2) { return false; }
+            else if (iter == limit) { return true; }
+            else
+            {
+                z = Complex.Add(Complex.Pow(z, 2), c);
+                return IsPixelInTheSet(z, c, limit, iter + 1);
+            }
         }
     }
 }
