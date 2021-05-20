@@ -24,9 +24,27 @@ namespace GenerationImageFractale
             txtYMax.Text = "2";
             txtCReal.Text = "-0.12";
             txtCImaginary.Text = "0.75";
-            txtGenerationTime.Text = "";
+            lblGenerationTime.Text = "";
             cboFractal.SelectedIndex = 0;
             picCanvas.BackColor = Color.White;
+
+            //configures the tooltip 
+            ToolTip help = new ToolTip();
+            help.AutoPopDelay = 10000;
+            help.InitialDelay = 1000;
+            help.UseFading = true;
+
+            //adds the tooltip to every component tht might be confusing
+            help.SetToolTip(this.lblXMin,           "Borne minimale (à gauche) dans l'axe des x");
+            help.SetToolTip(this.lblXMax,           "Borne maximale (à droite) dans l'axe des x");
+            help.SetToolTip(this.lblYMin,           "Borne minimale (en bas) dans l'axe des y");
+            help.SetToolTip(this.lblYMax,           "Borne maximale (en haut) dans l'axe des y");
+            help.SetToolTip(this.lblCReal,          "Composante réelle de c");
+            help.SetToolTip(this.lblCImaginary,     "Composante imaginaire de c");
+            help.SetToolTip(this.lblGenerationTime, "Temps de génération de l'image");
+            help.SetToolTip(this.cboFractal,        "Fractale que vous souhaitez générer");
+            help.SetToolTip(this.picCanvas,         "Cliquez sur l'image pour la sauvegarder...");
+            help.SetToolTip(this.btnGenerate,       "Cliquez sur ce bouton pour générer la fractale");
 
             //creates database if it doesn't exist
             DatabaseConnector.OpenDatabase();
@@ -66,7 +84,7 @@ namespace GenerationImageFractale
                 //end chronometer
                 chrono.Stop();
                 string chronoString = (chrono.ElapsedMilliseconds / 1000).ToString() + "." + (chrono.ElapsedMilliseconds % 1000).ToString() + " seconde(s)";
-                txtGenerationTime.Text = chronoString;
+                lblGenerationTime.Text = chronoString;
             }
             catch (Exception exception)
             {
@@ -75,7 +93,7 @@ namespace GenerationImageFractale
 
                 //end chronometer
                 chrono.Stop();
-                txtGenerationTime.Text = "";
+                lblGenerationTime.Text = "";
                 
                 //print error
                 MessageBox.Show(exception.Message);
@@ -156,7 +174,7 @@ namespace GenerationImageFractale
                 //end chronometer
                 chrono.Stop();
                 string chronoString = (chrono.ElapsedMilliseconds / 1000).ToString() + "." + (chrono.ElapsedMilliseconds % 1000).ToString() + " seconde(s)";
-                txtGenerationTime.Text = chronoString;
+                lblGenerationTime.Text = chronoString;
             }
             catch (Exception exception)
             {
@@ -165,7 +183,7 @@ namespace GenerationImageFractale
 
                 //end chronometer
                 chrono.Stop();
-                txtGenerationTime.Text = "";
+                lblGenerationTime.Text = "";
 
                 //print error
                 MessageBox.Show(exception.Message);
@@ -190,6 +208,14 @@ namespace GenerationImageFractale
             txtCReal.Visible = IsFractalJulia;
             lblCImaginary.Visible = IsFractalJulia;
             txtCImaginary.Visible = IsFractalJulia;
+        }
+
+        /// <summary>
+        /// Opens the help window
+        /// </summary>
+        private void OpenHelpForm(object sender, EventArgs e)
+        {
+            //todo
         }
     }
 }

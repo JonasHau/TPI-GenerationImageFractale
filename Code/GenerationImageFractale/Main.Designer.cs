@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.toolStr = new System.Windows.Forms.ToolStrip();
             this.toolStrHistory = new System.Windows.Forms.ToolStripDropDownButton();
@@ -47,7 +48,8 @@
             this.txtYMax = new System.Windows.Forms.TextBox();
             this.txtCReal = new System.Windows.Forms.TextBox();
             this.txtCImaginary = new System.Windows.Forms.TextBox();
-            this.txtGenerationTime = new System.Windows.Forms.Label();
+            this.lblGenerationTime = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +71,7 @@
             this.toolStrHistory.Name = "toolStrHistory";
             this.toolStrHistory.Size = new System.Drawing.Size(75, 22);
             this.toolStrHistory.Text = "Historique";
+            this.toolStrHistory.ToolTipText = "Régénère une fractal de l\'historique quand on clique dessus.\r\nEssayez donc !";
             // 
             // toolStrHelp
             // 
@@ -76,6 +79,8 @@
             this.toolStrHelp.Name = "toolStrHelp";
             this.toolStrHelp.Size = new System.Drawing.Size(35, 22);
             this.toolStrHelp.Text = "Aide";
+            this.toolStrHelp.ToolTipText = "Ouvre la fenêtre d\'aide.";
+            this.toolStrHelp.Click += new System.EventHandler(this.OpenHelpForm);
             // 
             // picCanvas
             // 
@@ -204,17 +209,17 @@
             this.txtCImaginary.Size = new System.Drawing.Size(75, 20);
             this.txtCImaginary.TabIndex = 7;
             // 
-            // txtGenerationTime
+            // lblGenerationTime
             // 
-            this.txtGenerationTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGenerationTime.BackColor = System.Drawing.Color.Transparent;
-            this.txtGenerationTime.Location = new System.Drawing.Point(419, 7);
-            this.txtGenerationTime.Name = "txtGenerationTime";
-            this.txtGenerationTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtGenerationTime.Size = new System.Drawing.Size(93, 18);
-            this.txtGenerationTime.TabIndex = 9;
-            this.txtGenerationTime.Text = "temps";
-            this.txtGenerationTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGenerationTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGenerationTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblGenerationTime.Location = new System.Drawing.Point(419, 7);
+            this.lblGenerationTime.Name = "lblGenerationTime";
+            this.lblGenerationTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblGenerationTime.Size = new System.Drawing.Size(93, 18);
+            this.lblGenerationTime.TabIndex = 9;
+            this.lblGenerationTime.Text = "temps";
+            this.lblGenerationTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Main
             // 
@@ -222,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 605);
-            this.Controls.Add(this.txtGenerationTime);
+            this.Controls.Add(this.lblGenerationTime);
             this.Controls.Add(this.txtCImaginary);
             this.Controls.Add(this.txtCReal);
             this.Controls.Add(this.txtYMax);
@@ -273,8 +278,9 @@
         private System.Windows.Forms.TextBox txtYMax;
         private System.Windows.Forms.TextBox txtCReal;
         private System.Windows.Forms.TextBox txtCImaginary;
-        private System.Windows.Forms.Label txtGenerationTime;
+        private System.Windows.Forms.Label lblGenerationTime;
         private System.Windows.Forms.ToolStripButton toolStrHelp;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
