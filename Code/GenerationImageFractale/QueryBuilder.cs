@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace GenerationImageFractale
 {
+    /// <summary>
+    /// This class builds query
+    /// </summary>
     public class QueryBuilder
     {
         /// <summary>
@@ -19,7 +22,7 @@ namespace GenerationImageFractale
             string query = @"SELECT [indexFractal], [xMin], [xMax], [yMin], [yMax], [cReal], [cImaginary] FROM [Fractals] ORDER BY [id] DESC LIMIT 10";
             List<List<string>> fractals = QueryExecutor.Select(query);
             ToolStripItem[] history = new ToolStripItem[fractals.Count()];
-            string entry;
+            string entryText;
 
             //feed them with the data
             for (int i = 0; i < fractals.Count(); i++)
@@ -27,22 +30,22 @@ namespace GenerationImageFractale
                 //prepare the text
                 if (fractals[i][0] == "0") //mandelbrot
                 {
-                    entry = "Type: Mandelbrot\r";
-                    entry += "x: " + fractals[i][1] + " à " + fractals[i][2] + "\r";
-                    entry += "y: " + fractals[i][3] + " à " + fractals[i][4];
+                    entryText = "Type: Mandelbrot\r";
+                    entryText += "x: " + fractals[i][1] + " à " + fractals[i][2] + "\r";
+                    entryText += "y: " + fractals[i][3] + " à " + fractals[i][4];
                 }
                 else //julia
                 {
-                    entry = "Type: Julia\r";
-                    entry += "x: " + fractals[i][1] + " à " + fractals[i][2] + "\r";
-                    entry += "y: " + fractals[i][3] + " à " + fractals[i][4] + "\r";
-                    entry += "c: " + fractals[i][5] + " + " + fractals[i][6] + "i";
+                    entryText = "Type: Julia\r";
+                    entryText += "x: " + fractals[i][1] + " à " + fractals[i][2] + "\r";
+                    entryText += "y: " + fractals[i][3] + " à " + fractals[i][4] + "\r";
+                    entryText += "c: " + fractals[i][5] + " + " + fractals[i][6] + "i";
                 }
 
                 //create and fill the ToolStripMenuItem
                 history[i] = new ToolStripMenuItem
                 {
-                    Text = entry,
+                    Text = entryText,
                     Tag = fractals[i]
                 };
             }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace GenerationImageFractale
 {
+    /// <summary>
+    /// This class represents a Julia fractal
+    /// </summary>
     public class Julia : Fractal
     {
         //attributes
@@ -18,7 +21,15 @@ namespace GenerationImageFractale
         public double CReal { get; set; }
         public double CImaginary { get; set; }
 
-        //constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="xMin">x min</param>
+        /// <param name="xMax">x max</param>
+        /// <param name="yMin">y min</param>
+        /// <param name="yMax">y max</param>
+        /// <param name="cReal">c real</param>
+        /// <param name="cImaginary">c imaginary</param>
         public Julia(double xMin, double xMax, double yMin, double yMax, double cReal, double cImaginary)
         {
             this.XMin = xMin;

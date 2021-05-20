@@ -9,7 +9,7 @@ namespace GenerationImageFractale
     static class Program
     {
         /// <summary>
-        /// Point d'entrée principal de l'application.
+        /// Main entry point of the application
         /// </summary>
         [STAThread]
         static void Main()

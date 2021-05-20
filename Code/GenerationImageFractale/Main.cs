@@ -11,8 +11,14 @@ using System.Windows.Forms;
 
 namespace GenerationImageFractale
 {
+    /// <summary>
+    /// The main form
+    /// </summary>
     public partial class Main : Form
     {
+        /// <summary>
+        /// Form constructor
+        /// </summary>
         public Main()
         {
             InitializeComponent();
@@ -78,7 +84,7 @@ namespace GenerationImageFractale
                 Cursor.Current = Cursors.WaitCursor;
 
                 //create and render fractal
-                FractalManager fractal = new FractalManager(xMin, xMax, yMin, yMax, cReal, cImaginary, selectedFractal);
+                FractalManager fractal = new FractalManager(selectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary);
                 picCanvas.Image = fractal.GenerateFractal(false);
 
                 //end chronometer
@@ -107,7 +113,7 @@ namespace GenerationImageFractale
         }
 
         /// <summary>
-        /// Save the fractal to a png
+        /// Saves the fractal to a png
         /// </summary>
         private void ExportFractalToPng(object sender, EventArgs e)
         {
@@ -150,7 +156,7 @@ namespace GenerationImageFractale
         }
 
         /// <summary>
-        /// Generate a fractal from history
+        /// Generates a fractal from history
         /// </summary>
         public void PrintFractalFromHistory(object sender, EventArgs e)
         {
@@ -158,9 +164,9 @@ namespace GenerationImageFractale
             var chrono = new System.Diagnostics.Stopwatch();
             chrono.Start();
 
-            //stores the values in the tag
-            ToolStripMenuItem item = sender as ToolStripMenuItem;
-            List<string> fractalParams = item.Tag as List<string>;
+            //stores entry values in the tag
+            ToolStripMenuItem entry = sender as ToolStripMenuItem;
+            List<string> fractalParams = entry.Tag as List<string>;
 
             try
             {
@@ -168,7 +174,7 @@ namespace GenerationImageFractale
                 Cursor.Current = Cursors.WaitCursor;
 
                 //create and render fractal
-                FractalManager fractal = new FractalManager(fractalParams[1], fractalParams[2], fractalParams[3], fractalParams[4], fractalParams[5], fractalParams[6], int.Parse(fractalParams[0]));
+                FractalManager fractal = new FractalManager(int.Parse(fractalParams[0]), fractalParams[1], fractalParams[2], fractalParams[3], fractalParams[4], fractalParams[5], fractalParams[6]);
                 picCanvas.Image = fractal.GenerateFractal(true);
 
                 //end chronometer

@@ -10,12 +10,15 @@ namespace GenerationImageFractale
 {
     //this code has been adapted from https://github.com/LouisRichard/GameLibrary/blob/master/Code/GameLibrary/DatabaseManager/DbConnector.cs
 
+    /// <summary>
+    /// The class that handles the db connection
+    /// </summary>
     public class DatabaseConnector
     {
         /// <summary>
         /// Opens the database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>SQLite statement to be executed statement against the db</returns>
         public static SQLiteCommand OpenDatabase()
         {
             bool createTable = false;
@@ -39,9 +42,8 @@ namespace GenerationImageFractale
         }
 
         /// <summary>
-        /// Connects to the database
+        /// Closes the database
         /// </summary>
-        /// <returns></returns>
         public static void CloseDatabase()
         {
             System.Data.SQLite.SQLiteConnection conn = new System.Data.SQLite.SQLiteConnection("data source=GenerationImageFractale.db3");

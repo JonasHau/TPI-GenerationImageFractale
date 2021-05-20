@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace GenerationImageFractale
 {
+    /// <summary>
+    /// This abstract class represents a fractal
+    /// </summary>
     public abstract class Fractal
     {
         //attributes
@@ -54,8 +57,8 @@ namespace GenerationImageFractale
         /// <summary>
         /// Check if the specified point is in the mandelbrot set
         /// </summary>
-        /// <param name="z"></param>
-        /// <param name="c"></param>
+        /// <param name="z">z value</param>
+        /// <param name="c">c value</param>
         /// <param name="limit">the maximum number of iterations</param>
         /// <param name="iter">the current number of iteration</param>
         /// <returns></returns>

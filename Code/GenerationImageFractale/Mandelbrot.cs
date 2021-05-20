@@ -9,9 +9,18 @@ using System.Threading.Tasks;
 
 namespace GenerationImageFractale
 {
+    /// <summary>
+    /// This class represents a Mandelbrot fractal
+    /// </summary>
     public class Mandelbrot : Fractal
     {
-        //constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="xMin">x min</param>
+        /// <param name="xMax">x max</param>
+        /// <param name="yMin">y min</param>
+        /// <param name="yMax">y max</param>
         public Mandelbrot(double xMin, double xMax, double yMin, double yMax)
         {
             this.XMin = xMin;
