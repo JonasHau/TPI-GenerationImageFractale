@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.toolStr = new System.Windows.Forms.ToolStrip();
-            this.toolStrHistorique = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStrHistory = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStrHelp = new System.Windows.Forms.ToolStripButton();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.lblXMin = new System.Windows.Forms.Label();
             this.lblXMax = new System.Windows.Forms.Label();
@@ -54,21 +55,27 @@
             // toolStr
             // 
             this.toolStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStrHistorique});
+            this.toolStrHistory,
+            this.toolStrHelp});
             this.toolStr.Location = new System.Drawing.Point(0, 0);
             this.toolStr.Name = "toolStr";
             this.toolStr.Size = new System.Drawing.Size(524, 25);
             this.toolStr.TabIndex = 0;
             this.toolStr.Text = "toolStr";
             // 
-            // toolStrHistorique
+            // toolStrHistory
             // 
-            this.toolStrHistorique.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStrHistorique.Image = ((System.Drawing.Image)(resources.GetObject("toolStrHistorique.Image")));
-            this.toolStrHistorique.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStrHistorique.Name = "toolStrHistorique";
-            this.toolStrHistorique.Size = new System.Drawing.Size(75, 22);
-            this.toolStrHistorique.Text = "Historique";
+            this.toolStrHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStrHistory.Name = "toolStrHistory";
+            this.toolStrHistory.Size = new System.Drawing.Size(75, 22);
+            this.toolStrHistory.Text = "Historique";
+            // 
+            // toolStrHelp
+            // 
+            this.toolStrHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStrHelp.Name = "toolStrHelp";
+            this.toolStrHelp.Size = new System.Drawing.Size(35, 22);
+            this.toolStrHelp.Text = "Aide";
             // 
             // picCanvas
             // 
@@ -250,7 +257,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStr;
-        private System.Windows.Forms.ToolStripDropDownButton toolStrHistorique;
+        private System.Windows.Forms.ToolStripDropDownButton toolStrHistory;
         private System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.Label lblXMin;
         private System.Windows.Forms.Label lblXMax;
@@ -267,6 +274,7 @@
         private System.Windows.Forms.TextBox txtCReal;
         private System.Windows.Forms.TextBox txtCImaginary;
         private System.Windows.Forms.Label txtGenerationTime;
+        private System.Windows.Forms.ToolStripButton toolStrHelp;
     }
 }
 

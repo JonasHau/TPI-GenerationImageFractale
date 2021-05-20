@@ -22,6 +22,8 @@ namespace GenerationImageFractale
             txtXMax.Text = "2";
             txtYMin.Text = "-2";
             txtYMax.Text = "2";
+            txtCReal.Text = "-0.12";
+            txtCImaginary.Text = "0.75";
             txtGenerationTime.Text = "";
             cboFractal.SelectedIndex = 0;
             picCanvas.BackColor = Color.White;
@@ -59,7 +61,7 @@ namespace GenerationImageFractale
 
                 //create and render fractal
                 FractalManager fractal = new FractalManager(xMin, xMax, yMin, yMax, cReal, cImaginary, selectedFractal);
-                picCanvas.Image = fractal.GenerateFractal();
+                picCanvas.Image = fractal.GenerateFractal(false);
 
                 //end chronometer
                 chrono.Stop();
@@ -118,8 +120,15 @@ namespace GenerationImageFractale
         /// </summary>
         private void LoadHistory()
         {
-            toolStrHistorique.DropDownItems.Clear();
-            toolStrHistorique.DropDownItems.AddRange(QueryBuilder.GetHistory());
+            ToolStripItem[] history = QueryBuilder.GetHistory();
+            
+            foreach(ToolStripItem entry in history)
+            {
+                entry.Click += new EventHandler(PrintFractalFromHistory);
+            }
+
+            toolStrHistory.DropDownItems.Clear();
+            toolStrHistory.DropDownItems.AddRange(history);
         }
 
         /// <summary>
@@ -142,7 +151,7 @@ namespace GenerationImageFractale
 
                 //create and render fractal
                 FractalManager fractal = new FractalManager(fractalParams[1], fractalParams[2], fractalParams[3], fractalParams[4], fractalParams[5], fractalParams[6], int.Parse(fractalParams[0]));
-                picCanvas.Image = fractal.GenerateFractal();
+                picCanvas.Image = fractal.GenerateFractal(true);
 
                 //end chronometer
                 chrono.Stop();

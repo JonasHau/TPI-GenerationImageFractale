@@ -41,7 +41,7 @@ namespace GenerationImageFractale
         /// Generates the fractal according to the user configuration
         /// </summary>
         /// <returns>The fractal rendered in a bitmap</returns>
-        public Bitmap GenerateFractal()
+        public Bitmap GenerateFractal(bool fromHistory)
         {
             //try parsing the boundaries
             double xMin, xMax, yMin, yMax;
@@ -72,7 +72,7 @@ namespace GenerationImageFractale
                 Bitmap bitmap = fractal.Render();
 
                 //adds the fractal to the history
-                QueryBuilder.SaveFractal(selectedFractal, xMin, xMax, yMin, yMax);
+                if (!fromHistory) { QueryBuilder.SaveFractal(SelectedFractal, xMin, xMax, yMin, yMax); }
 
                 return bitmap;
             }
@@ -93,7 +93,8 @@ namespace GenerationImageFractale
                 Bitmap bitmap = fractal.Render();
 
                 //adds the fractal to the history
-                QueryBuilder.SaveFractal(selectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary);
+                if (!fromHistory) { QueryBuilder.SaveFractal(SelectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary); }
+                
 
                 return bitmap;
             }

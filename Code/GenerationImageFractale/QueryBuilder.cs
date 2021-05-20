@@ -45,7 +45,6 @@ namespace GenerationImageFractale
                     Text = entry,
                     Tag = fractals[i]
                 };
-                //history[i].Click += new EventHandler(Main.PrintFractalFromHistory);
             }
 
             return history;
