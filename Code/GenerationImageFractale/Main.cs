@@ -118,7 +118,7 @@ namespace GenerationImageFractale
         private void ExportFractalToPng(object sender, EventArgs e)
         {
             //filename default format : "Year-Month-Day HourhMinute"
-            string filename = DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + " " + DateTime.Now.Hour + "h" + DateTime.Now.Minute;
+            string filename = "GenerationImageFractale "+ DateTime.Now.ToString("yyyyMMdd-HHmmss") + " " + cboFractal.Text;
 
             //save bitmap with save file dialog
             Image bitmap = picCanvas.Image;
@@ -214,14 +214,6 @@ namespace GenerationImageFractale
             txtCReal.Visible = IsFractalJulia;
             lblCImaginary.Visible = IsFractalJulia;
             txtCImaginary.Visible = IsFractalJulia;
-        }
-
-        /// <summary>
-        /// Opens the help window
-        /// </summary>
-        private void OpenHelpForm(object sender, EventArgs e)
-        {
-            //todo
         }
     }
 }

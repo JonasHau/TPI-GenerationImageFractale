@@ -11,7 +11,7 @@ namespace GenerationImageFractale
     //this code has been adapted from https://github.com/LouisRichard/GameLibrary/blob/master/Code/GameLibrary/DatabaseManager/DbConnector.cs
 
     /// <summary>
-    /// The class that handles the db connection
+    /// This class handles the db connection
     /// </summary>
     public class DatabaseConnector
     {

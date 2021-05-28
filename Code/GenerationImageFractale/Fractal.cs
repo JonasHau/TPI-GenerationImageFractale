@@ -34,7 +34,7 @@ namespace GenerationImageFractale
         }
 
         /// <summary>
-        /// Converts a coordinate in the bitmap to a coordinate in the complex plane (based on the user configuration
+        /// Converts a coordinate in the bitmap to a coordinate in the complex plane (based on the user configuration)
         /// </summary>
         /// <param name="bitmapX">x value in the bitmap</param>
         /// <param name="bitmapY">y value in the bitmap</param>

@@ -7,7 +7,7 @@ namespace GenerationImageFractale
     //this code has been adapted from https://github.com/LouisRichard/GameLibrary/blob/master/Code/GameLibrary/DatabaseManager/ExecuteQuery.cs
 
     /// <summary>
-    /// The class that executes query
+    /// This class executes query
     /// </summary>
     public class QueryExecutor
     {
