@@ -63,12 +63,12 @@
                 <task id="37" name="Rendre l'affichage dynamique (change selon la fractale choisie)" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
                 <task id="33" name="Affichage de l'ensemble de Julia" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
                 <task id="36" name="Paramètrage de la fractale (bornes et constante complexe)" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
-                <task id="42" name="Génération de la documentation Doxygen" meeting="false" start="2021-05-25" duration="1" complete="0" expand="true"/>
+                <task id="42" name="Génération de la documentation Doxygen" meeting="false" start="2021-05-25" duration="2" complete="0" expand="true"/>
                 <task id="43" name="Génération de l'installeur" meeting="false" start="2021-05-25" duration="2" complete="0" expand="true"/>
             </task>
             <task id="7" name="Tests" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true">
-                <task id="14" name="Exécution des tests et retours dans la documentation" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true"/>
-                <task id="29" name="Documentation des erreures restantes" meeting="false" start="2021-05-28" duration="1" complete="0" expand="true"/>
+                <task id="14" name="Exécution des tests et retours dans la documentation" meeting="false" start="2021-05-27" duration="1" complete="0" expand="true"/>
+                <task id="29" name="Documentation des erreures restantes" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true"/>
             </task>
             <task id="8" name="Conclusion" meeting="false" start="2021-05-31" duration="3" complete="0" expand="true">
                 <task id="39" name="Comparaison entre la planification et le travail réalisé" meeting="false" start="2021-05-31" duration="1" complete="0" expand="true"/>
