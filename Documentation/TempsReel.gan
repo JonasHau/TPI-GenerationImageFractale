@@ -54,7 +54,7 @@
                 </task>
                 <task id="27" name="Finalisation de la planification" meeting="false" start="2021-05-10" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="6" name="Implementation" meeting="false" start="2021-05-10" duration="8" complete="0" expand="true">
+            <task id="6" name="Implementation" meeting="false" start="2021-05-10" duration="10" complete="0" expand="true">
                 <task id="30" name="Développement de l'interface" meeting="false" start="2021-05-10" duration="1" complete="0" expand="true"/>
                 <task id="31" name="Affichage de l'ensemble de Mandelbrot" meeting="false" start="2021-05-10" duration="3" complete="0" expand="true"/>
                 <task id="32" name="Sauvegarde de l'image générée (exportation au format png)" meeting="false" start="2021-05-17" duration="1" complete="0" expand="true"/>
@@ -63,16 +63,20 @@
                 <task id="37" name="Rendre l'affichage dynamique (change selon la fractale choisie)" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
                 <task id="33" name="Affichage de l'ensemble de Julia" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
                 <task id="36" name="Paramètrage de la fractale (bornes et constante complexe)" meeting="false" start="2021-05-18" duration="1" complete="0" expand="true"/>
-                <task id="42" name="Génération de la documentation Doxygen" meeting="false" start="2021-05-25" duration="2" complete="0" expand="true"/>
-                <task id="43" name="Génération de l'installeur" meeting="false" start="2021-05-25" duration="2" complete="0" expand="true"/>
+                <task id="42" name="Génération de la documentation Doxygen" meeting="false" start="2021-05-20" duration="6" complete="0" expand="true"/>
+                <task id="43" name="Génération de l'installeur" meeting="false" start="2021-05-25" duration="4" complete="0" expand="true"/>
             </task>
-            <task id="7" name="Tests" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true">
+            <task id="7" name="Tests" meeting="false" start="2021-05-27" duration="3" complete="0" expand="true">
                 <task id="14" name="Exécution des tests et retours dans la documentation" meeting="false" start="2021-05-27" duration="1" complete="0" expand="true"/>
-                <task id="29" name="Documentation des erreures restantes" meeting="false" start="2021-05-27" duration="2" complete="0" expand="true"/>
+                <task id="29" name="Documentation des erreures restantes" meeting="false" start="2021-05-27" duration="3" complete="0" expand="true"/>
             </task>
             <task id="8" name="Conclusion" meeting="false" start="2021-05-31" duration="3" complete="0" expand="true">
-                <task id="39" name="Comparaison entre la planification et le travail réalisé" meeting="false" start="2021-05-31" duration="1" complete="0" expand="true"/>
-                <task id="38" name="Rédaction de la conclusion" meeting="false" start="2021-06-01" duration="2" complete="0" expand="true"/>
+                <task id="47" name="Rédaction du manuel d'installation" meeting="false" start="2021-05-31" duration="1" complete="0" expand="true"/>
+                <task id="48" name="Rédaction du manuel d'utilisation" meeting="false" start="2021-05-31" duration="1" complete="0" expand="true"/>
+                <task id="38" name="Rédaction de la conclusion" meeting="false" start="2021-06-01" duration="1" complete="0" expand="true"/>
+                <task id="45" name="Génération du glossaire" meeting="false" start="2021-06-01" duration="1" complete="0" expand="true"/>
+                <task id="46" name="Rédaction du résumé du rapport du TPI" meeting="false" start="2021-06-03" duration="1" complete="0" expand="true"/>
+                <task id="39" name="Comparaison entre la planification et le travail réalisé" meeting="false" start="2021-06-03" duration="1" complete="0" expand="true"/>
             </task>
         </task>
     </tasks>
