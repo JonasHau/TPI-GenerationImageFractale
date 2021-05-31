@@ -84,6 +84,9 @@ namespace GenerationImageFractale
             {
                 //instantiates the fractal
                 fractal = new Mandelbrot(xMin, xMax, yMin, yMax);
+
+                //adds the fractal to the history if necessary
+                if (!fromHistory) { QueryBuilder.SaveFractal(SelectedFractal, xMin, xMax, yMin, yMax); }
             }
             else if (SelectedFractal == 1)
             {
@@ -100,6 +103,9 @@ namespace GenerationImageFractale
 
                 //instantiates the fractal
                 fractal = new Julia(xMin, xMax, yMin, yMax, cReal, cImaginary);
+                
+                //adds the fractal to the history if necessary
+                if (!fromHistory) { QueryBuilder.SaveFractal(SelectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary); }
             }
             else
             {
@@ -108,9 +114,6 @@ namespace GenerationImageFractale
 
             //renders the fractal
             bitmap = fractal.Render();
-
-            //adds the fractal to the history if necessary
-            if (!fromHistory) { QueryBuilder.SaveFractal(SelectedFractal, xMin, xMax, yMin, yMax); }
 
             return bitmap;
         }

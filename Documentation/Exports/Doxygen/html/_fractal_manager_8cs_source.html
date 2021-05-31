@@ -140,38 +140,41 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">//instantiates the fractal</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                fractal = <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_mandelbrot.html">Mandelbrot</a>(xMin, xMax, yMin, yMax);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SelectedFractal == 1)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">//tries parsing the complex constant c</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">double</span> cReal, cImaginary;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                expression.setExpressionString(CReal);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">if</span> (!expression.checkSyntax()) { <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_c_real_exception.html">InvalidCRealException</a>(); }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                cReal = expression.calculate();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                expression.setExpressionString(CImaginary);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (!expression.checkSyntax()) { <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_c_imaginary_exception.html">InvalidCImaginaryException</a>(); }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                cImaginary = expression.calculate();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="comment">//instantiates the fractal</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                fractal = <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_julia.html">Julia</a>(xMin, xMax, yMin, yMax, cReal, cImaginary);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_fractal_exception.html">InvalidFractalException</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="comment">//renders the fractal</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            bitmap = fractal.<a class="code" href="class_generation_image_fractale_1_1_fractal.html#a01d1522077f27057e67ac5f7db603a08">Render</a>();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">//adds the fractal to the history if necessary</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (!fromHistory) { <a class="code" href="class_generation_image_fractale_1_1_query_builder.html">QueryBuilder</a>.<a class="code" href="class_generation_image_fractale_1_1_query_builder.html#aff2881588780b8a647a29ca7e7a60c80">SaveFractal</a>(SelectedFractal, xMin, xMax, yMin, yMax); }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">//adds the fractal to the history if necessary</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (!fromHistory) { <a class="code" href="class_generation_image_fractale_1_1_query_builder.html">QueryBuilder</a>.<a class="code" href="class_generation_image_fractale_1_1_query_builder.html#aff2881588780b8a647a29ca7e7a60c80">SaveFractal</a>(SelectedFractal, xMin, xMax, yMin, yMax); }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SelectedFractal == 1)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">//tries parsing the complex constant c</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordtype">double</span> cReal, cImaginary;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                expression.setExpressionString(CReal);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">if</span> (!expression.checkSyntax()) { <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_c_real_exception.html">InvalidCRealException</a>(); }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                cReal = expression.calculate();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                expression.setExpressionString(CImaginary);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">if</span> (!expression.checkSyntax()) { <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_c_imaginary_exception.html">InvalidCImaginaryException</a>(); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                cImaginary = expression.calculate();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="comment">//instantiates the fractal</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                fractal = <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_julia.html">Julia</a>(xMin, xMax, yMin, yMax, cReal, cImaginary);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">//adds the fractal to the history if necessary</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> (!fromHistory) { <a class="code" href="class_generation_image_fractale_1_1_query_builder.html">QueryBuilder</a>.<a class="code" href="class_generation_image_fractale_1_1_query_builder.html#aff2881588780b8a647a29ca7e7a60c80">SaveFractal</a>(SelectedFractal, xMin, xMax, yMin, yMax, cReal, cImaginary); }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_generation_image_fractale_1_1_invalid_fractal_exception.html">InvalidFractalException</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> bitmap;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">//renders the fractal</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            bitmap = fractal.<a class="code" href="class_generation_image_fractale_1_1_fractal.html#a01d1522077f27057e67ac5f7db603a08">Render</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> bitmap;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="ttc" id="aclass_generation_image_fractale_1_1_fractal_html"><div class="ttname"><a href="class_generation_image_fractale_1_1_fractal.html">GenerationImageFractale.Fractal</a></div><div class="ttdoc">This abstract class represents a fractal</div><div class="ttdef"><b>Definition:</b> <a href="_fractal_8cs_source.html#l00015">Fractal.cs:16</a></div></div>
 <div class="ttc" id="aclass_generation_image_fractale_1_1_fractal_html_a01d1522077f27057e67ac5f7db603a08"><div class="ttname"><a href="class_generation_image_fractale_1_1_fractal.html#a01d1522077f27057e67ac5f7db603a08">GenerationImageFractale.Fractal.Render</a></div><div class="ttdeci">virtual Bitmap Render()</div><div class="ttdoc">Is redefined for each fractal</div><div class="ttdef"><b>Definition:</b> <a href="_fractal_8cs_source.html#l00031">Fractal.cs:31</a></div></div>
 <div class="ttc" id="aclass_generation_image_fractale_1_1_fractal_manager_html"><div class="ttname"><a href="class_generation_image_fractale_1_1_fractal_manager.html">GenerationImageFractale.FractalManager</a></div><div class="ttdoc">This class manages fractals</div><div class="ttdef"><b>Definition:</b> <a href="_fractal_manager_8cs_source.html#l00014">FractalManager.cs:15</a></div></div>
